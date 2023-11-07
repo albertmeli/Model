@@ -1,0 +1,26 @@
+version: '3'
+services:
+  api_container:
+      image: elixir
+      container_name: api_container
+      volumes:
+        - ./api:/api
+      working_dir: /api
+      # command: ["mix", "phx.server"]
+      ports:
+        - 80:80
+  database:
+    image: postgres
+    restart: always
+    ports:
+        - 5432:5432
+    environment:
+      POSTGRES_DB: api_db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+        - 8080:8080

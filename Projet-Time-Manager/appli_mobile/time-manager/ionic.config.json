@@ -1,0 +1,7 @@
+{
+  "name": "Time Manager",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
